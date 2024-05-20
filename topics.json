@@ -1,0 +1,140 @@
+{"topics": [
+   {
+      "partitions": 3,
+      "configs": {
+         "cleanup.policy": "delete",
+         "retention.ms": "604800000"
+      },
+      "replication_factor": 2,
+      "name": "topic1"
+   },
+   {
+      "partitions": 1,
+      "configs": {"cleanup.policy": "compact"},
+      "replication_factor": 1,
+      "name": "topic2"
+   },
+   {
+      "partitions": 1,
+      "configs": {"cleanup.policy": "compact"},
+      "replication_factor": 1,
+      "name": "duncan-topic"
+   },
+   {
+      "partitions": 1,
+      "configs": {
+         "cleanup.policy": "delete",
+         "retention.ms": "600000"
+      },
+      "replication_factor": 1,
+      "name": "dee"
+   },
+   {
+      "partitions": 1,
+      "configs": {
+         "cleanup.policy": "delete",
+         "retention.ms": "10000"
+      },
+      "replication_factor": 1,
+      "name": "git-workflows"
+   },
+   {
+      "partitions": 2,
+      "configs": {
+         "cleanup.policy": "delete",
+         "retention.ms": "100000"
+      },
+      "replication_factor": 2,
+      "name": "another-one"
+   },
+   {
+      "partitions": 3,
+      "configs": {
+         "cleanup.policy": "delete",
+         "retention.ms": "1000"
+      },
+      "replication_factor": 1,
+      "name": "topic-module"
+   },
+   {
+      "partitions": 1,
+      "configs": {
+         "cleanup.policy": "delete",
+         "retention.ms": "120000"
+      },
+      "replication_factor": 1,
+      "name": "pr-topic2"
+   },
+   {
+      "partitions": 1,
+      "configs": {
+         "cleanup.policy": "delete",
+         "retention.ms": "100000"
+      },
+      "replication_factor": 1,
+      "name": "asdasdasd"
+   },
+   {
+      "partitions": 1,
+      "configs": {
+         "cleanup.policy": "delete",
+         "retention.ms": "12000"
+      },
+      "replication_factor": 1,
+      "name": "Andre300"
+   },
+   {
+      "partitions": 1,
+      "configs": {
+         "cleanup.policy": "delete",
+         "retention.ms": "10000"
+      },
+      "replication_factor": 1,
+      "name": "testing-pr-topic-creation-script"
+   },
+   {
+      "partitions": 1,
+      "configs": {
+         "cleanup.policy": "delete",
+         "retention.ms": "10000"
+      },
+      "replication_factor": 1,
+      "name": "Another_test_topic"
+   },
+   {
+      "partitions": 1,
+      "configs": {
+         "cleanup.policy": "delete",
+         "retention.ms": "120000"
+      },
+      "replication_factor": 1,
+      "name": "duncan"
+   },
+   {
+      "partitions": 1,
+      "configs": {
+         "cleanup.policy": "delete",
+         "retention.ms": "10000"
+      },
+      "replication_factor": 1,
+      "name": "Yoni"
+   },
+   {
+      "partitions": 1,
+      "configs": {
+         "cleanup.policy": "delete",
+         "retention.ms": "10000"
+      },
+      "replication_factor": 1,
+      "name": "thabang"
+   },
+   {
+      "partitions": 1,
+      "configs": {
+         "cleanup.policy": "delete",
+         "retention.ms": "604800000"
+      },
+      "replication_factor": 2,
+      "name": "<domains>.<group>.<system>.<environment>.<names7>"
+   }
+]}
