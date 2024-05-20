@@ -136,5 +136,14 @@
       },
       "replication_factor": 2,
       "name": "<domains>.<group>.<system>.<environment>.<names7>"
+   },
+   {
+      "partitions": 1,
+      "configs": {
+         "cleanup.policy": "delete",
+         "retention.ms": "604800000"
+      },
+      "replication_factor": 2,
+      "name": "<domains>.<group>.<system>.<environment>.<names>"
    }
 ]}
