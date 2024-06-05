@@ -30,14 +30,21 @@ jobs:
 
       - name: Merge JSON files
         run: |
+          # Create a temporary file to store the merged topics
           temp_main_json=$(mktemp)
           jq -n '{ "topics": [] }' > "$temp_main_json"
           
+          # Loop through each new JSON topic file and merge into topics.json
           for file in $(find topic -name '*.json'); do
             echo "Processing file: $file"
-            jq --argfile new_json "$file" '.topics += [$new_json]' "$temp_main_json" > tmp.$$.json && mv tmp.$$.json "$temp_main_json"
-            rm "$file"
+            jq ".topics += [input]" "$temp_main_json" "$file" > tmp.$$.json && mv tmp.$$.json "$temp_main_json"
           done
+
+          # Merge the temporary file with the main topics.json
+          jq ".topics += input.topics" topics.json "$temp_main_json" > tmp.$$.json && mv tmp.$$.json topics.json
+
+          # Remove all JSON files except topics.json
+          find topic -name '*.json' ! -name 'topics.json' -delete 
 
       - name: Commit and push changes
         run: |
