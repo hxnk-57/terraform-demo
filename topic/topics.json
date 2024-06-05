@@ -4,7 +4,7 @@
       "partitions": 1,
       "configs": {"cleanup.policy": "compact"},
       "replication_factor": 1,
-      "name": "duncan-topic"
+      "name": "duncan-topics"
    },
    {
       "partitions": 1,
