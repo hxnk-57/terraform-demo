@@ -29,12 +29,9 @@ jobs:
       - name: Merge JSON files
         run: |
           temp_main_json=$(mktemp)
-          
           jq -n '{ "topics": [] }' > "$temp_main_json"
           
-          for dir in topics; do
-            for file in $(find "$dir" -name '*.json'); do
-              jq --argfile new_json "$file" '.topics += [$new_json]' "$temp_main_json" > tmp.$$.json && mv tmp.$$.json "$temp_main_json"
-              rm "$file"
-            done
+          for file in $(find topic -name '*.json'); do
+            jq --argfile new_json "$file" '.topics += [$new_json]' "$temp_main_json" > tmp.$$.json && mv tmp.$$.json "$temp_main_json"
+            rm "$file"
           done
