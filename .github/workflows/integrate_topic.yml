@@ -41,8 +41,8 @@ jobs:
 
       - name: Commit and push changes
         run: |
-          git config --global user.name "hxnk-57"
-          git config --global user.email "henkbornman701@gmail.com"
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add topic/topics.json
           git commit -m "Added requested topics"
           git push
