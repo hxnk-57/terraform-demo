@@ -2,5 +2,5 @@
       "partitions": 1,
       "configs": {"cleanup.policy": "compact"},
       "replication_factor": 1,
-      "name": "new-s"
+      "name": "new-topic-again"
    }
