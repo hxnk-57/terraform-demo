@@ -13,10 +13,11 @@ jobs:
     steps:
       - name: Check if PR is merged
         if: github.event.pull_request.merged == true
+        run: echo "Merged pull request"
 
       - name: Check out the repository
         uses: actions/checkout@v2
-
+        
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
@@ -38,7 +39,7 @@ jobs:
             done
           done
           
-          mv "$temp_main_json" main.json
+          mv "$temp_main_json" topics.json
 
       - name: Commit and push changes
         run: |
