@@ -19,7 +19,7 @@
       "partitions": 1,
       "configs": {
          "cleanup.policy": "delete",
-         "retention.ms": "10000"
+         "retention.ms": "1000"
       },
       "replication_factor": 1,
       "name": "git-workflows"
