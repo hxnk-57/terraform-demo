@@ -32,6 +32,7 @@ jobs:
           jq -n '{ "topics": [] }' > "$temp_main_json"
           
           for file in $(find topic -name '*.json'); do
+            echo "Processing file: $file"
             jq --argfile new_json "$file" '.topics += [$new_json]' "$temp_main_json" > tmp.$$.json && mv tmp.$$.json "$temp_main_json"
             rm "$file"
           done
