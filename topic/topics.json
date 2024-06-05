@@ -169,5 +169,11 @@
       "configs": {"cleanup.policy": "compact"},
       "replication_factor": 2,
       "name": "<domains>.<group>.<system>.<environment>.<names8>"
+   },
+   {
+      "partitions": 3,
+      "configs": {"cleanup.policy": "compact"},
+      "replication_factor": 2,
+      "name": "<domains>.<group>.<system>.<environment>.<name10>"
    }
 ]}
