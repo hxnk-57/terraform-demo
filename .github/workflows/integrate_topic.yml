@@ -8,6 +8,8 @@ on:
 
 jobs:
   merge-json:
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
 
     steps:
