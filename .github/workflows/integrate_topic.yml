@@ -37,3 +37,4 @@ jobs:
               jq --argfile new_json "$file" '.topics += [$new_json]' "$temp_main_json" > tmp.$$.json && mv tmp.$$.json "$temp_main_json"
               rm "$file"
             done
+          done
