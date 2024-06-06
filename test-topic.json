@@ -1,0 +1,8 @@
+{
+  "partitions": 1,
+  "configs": {
+    "cleanup.policy": "compact"
+  },
+  "replication_factor": 1,
+  "name": "test-topic-4"
+}

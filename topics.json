@@ -1,0 +1,37 @@
+{
+  "topics": [
+    {
+      "partitions": 3,
+      "configs": {
+        "cleanup.policy": "delete",
+        "retention.ms": "604800000"
+      },
+      "replication_factor": 2,
+      "name": "topic1"
+    },
+    {
+      "partitions": 1,
+      "configs": {
+        "cleanup.policy": "compact"
+      },
+      "replication_factor": 1,
+      "name": "topic2"
+    },
+    {
+      "partitions": 1,
+      "configs": {
+        "cleanup.policy": "compact"
+      },
+      "replication_factor": 1,
+      "name": "test-topic-2"
+    },
+    {
+      "partitions": 1,
+      "configs": {
+        "cleanup.policy": "compact"
+      },
+      "replication_factor": 1,
+      "name": "test-topic-3"
+    }
+  ]
+}

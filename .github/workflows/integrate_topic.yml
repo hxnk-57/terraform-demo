@@ -25,32 +25,19 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Install jq
-        run: sudo apt-get install -y jq
-
       - name: Merge JSON files
         run: |
-          # Create a temporary file to store the merged topics
-          temp_main_json=$(mktemp)
-          jq -n '{ "topics": [] }' > "$temp_main_json"
-          
-          # Loop through each new JSON topic file and merge into topics.json
-          for file in $(find topic -name '*.json'); do
-            echo "Processing file: $file"
-            jq ".topics += [input]" "$temp_main_json" "$file" > tmp.$$.json && mv tmp.$$.json "$temp_main_json"
-          done
-
-          # Merge the temporary file with the main topics.json
-          jq ".topics += input.topics" topics.json "$temp_main_json" > tmp.$$.json && mv tmp.$$.json topics.json
-
-          # Remove all JSON files except topics.json
-          find topic -name '*.json' ! -name 'topics.json' -delete 
+          if [[ "${GITHUB_REF##*/}" == *"topic-request"* ]]; then
+            python merge_json.py topic
+          elif [[ "${GITHUB_REF##*/}" == *"service-account-request"* ]]; then
+            python merge_json.py service_account
+          fi
 
       - name: Commit and push changes
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add --all
+          git add topic/topics.json
           git commit -m "Added requested topics"
           git push
         env:
