@@ -1,5 +1,4 @@
-{
-"topics": [
+{"topics": [
    {
       "partitions": 3,
       "configs": {
@@ -14,6 +13,14 @@
       "configs": {"cleanup.policy": "compact"},
       "replication_factor": 1,
       "name": "topic2"
+   },
+   {
+      "partitions": 3,
+      "configs": {
+         "cleanup.policy": "delete",
+         "retention.ms": "604800000"
+      },
+      "replication_factor": 2,
+      "name": "test-topic-3"
    }
-]
-}
+]}
