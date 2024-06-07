@@ -28,6 +28,12 @@ jobs:
       - name: List files in the repo
         run: ls -R
 
+      - name: Debug GITHUB_REF
+        run: |
+          echo "GITHUB_REF: ${GITHUB_REF}"
+          echo "GITHUB_HEAD_REF: ${GITHUB_HEAD_REF}"
+          echo "GITHUB_BASE_REF: ${GITHUB_BASE_REF}"
+
       - name: Merge JSON files
         run: |
           echo "Current ref: ${GITHUB_REF##*/}"
