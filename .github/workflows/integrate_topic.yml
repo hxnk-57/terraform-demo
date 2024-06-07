@@ -37,10 +37,10 @@ jobs:
       - name: Merge JSON files
         run: |
           echo "Current ref: ${GITHUB_REF##*/}"
-          if [[ "${GITHUB_REF##*/}" == *"topic-request"* ]]; then
+          if [[ "${GITHUB_HEAD_REF}" == *"topic-request"* ]]; then
             echo "Executing merge.py topic"
             python merge.py topic
-          elif [[ "${GITHUB_REF##*/}" == *"service-account-request"* ]]; then
+          elif [[ "${GITHUB_HEAD_REF}" == *"service-account-request"* ]]; then
             python merge.py service_account
           fi
 
