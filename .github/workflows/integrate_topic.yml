@@ -24,14 +24,22 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.x'
+          
+      - name: List files in the repo
+        run: ls -R
 
       - name: Merge JSON files
         run: |
+          echo "Current ref: ${GITHUB_REF##*/}"
           if [[ "${GITHUB_REF##*/}" == *"topic-request"* ]]; then
-            python merge_json.py topic
+            echo "Executing merge.py topic"
+            python merge.py topic
           elif [[ "${GITHUB_REF##*/}" == *"service-account-request"* ]]; then
-            python merge_json.py service_account
+            python merge.py service_account
           fi
+
+      - name: List files after merging
+        run: ls -R
 
       - name: Commit and push changes
         run: |
