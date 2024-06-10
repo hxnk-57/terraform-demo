@@ -1,6 +1,0 @@
-{
-   "partitions": 3,
-   "configs": {"cleanup.policy": "compact"},
-   "replication_factor": 2,
-   "name": "<domains>.<group>.<system>.<environment>.<name101>"
-}
