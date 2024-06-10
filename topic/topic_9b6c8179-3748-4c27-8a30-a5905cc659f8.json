@@ -1,0 +1,9 @@
+{
+   "partitions": 3,
+   "configs": {
+      "cleanup.policy": "delete",
+      "retention.ms": "604800000"
+   },
+   "replication_factor": 2,
+   "name": "test-topical-topics"
+}
