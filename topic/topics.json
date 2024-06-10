@@ -35,6 +35,32 @@
       },
       "replication_factor": 2,
       "name": "test-topic-eh-2]"
+    },
+    {
+      "partitions": 3,
+      "configs": {
+        "cleanup.policy": "delete",
+        "retention.ms": "604800000"
+      },
+      "replication_factor": 2,
+      "name": "test-topic-eh"
+    },
+    {
+      "partitions": 3,
+      "configs": {
+        "cleanup.policy": "delete",
+        "retention.ms": "604800000"
+      },
+      "replication_factor": 2,
+      "name": "test-topic-eh-2]"
+    },
+    {
+      "partitions": 3,
+      "configs": {
+        "cleanup.policy": "compact"
+      },
+      "replication_factor": 2,
+      "name": "<domains>.<group>.<system>.<environment>.<name101>"
     }
   ]
 }
