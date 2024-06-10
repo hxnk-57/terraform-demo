@@ -17,6 +17,8 @@ def merge_json_files(directory : str, output_file: str, key: str):
                 data[key].append(item)
             
             os.remove(file_path)
+            print(f"deleted file {file_path}")
+
     
     with open(output_file_path, 'w') as f:
         json.dump(data, f, indent=2)
